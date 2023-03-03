@@ -11,14 +11,18 @@
 		"libma": "libma",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
-	},
+	"homepage": "https://github.com/Eibeel/libma#readme",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Eibeel/libma.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"react",
+		"components",
+		"library",
+		"react-components",
+		"cli"
+	],
 	"author": "@Eibeel",
 	"license": "MIT",
 	"devDependencies": {
