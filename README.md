@@ -21,5 +21,7 @@ yarn add libma
 2. Run:
 
 ```bash
-nox libma
+npx libma
 ```
+## LICENSE:
+- [MIT](https://github.com/Eibeel/libma/blob/master/LICENSE)
