@@ -1,0 +1,28 @@
+{
+	"name": "libma",
+	"version": "1.0.0",
+	"description": "Administra librerías de componentes populares para React de forma fácil y eficiente.",
+	"type": "module",
+	"bin": {
+		"libma": "./src/bin.js"
+	},
+	"main": "index.js",
+	"scripts": {
+		"libma": "libma",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "@Eibeel",
+	"license": "MIT",
+	"devDependencies": {
+		"libma": "file://.",
+		"standard": "17.0.0"
+	},
+	"eslintConfig": {
+		"extends": "standard"
+	},
+	"dependencies": {
+		"@clack/prompts": "0.6.1",
+		"picocolors": "1.0.0"
+	}
+}
