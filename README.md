@@ -21,7 +21,5 @@ yarn add libma
 2. Run:
 
 ```bash
-npm run libma
-# or
-yarn libma
+nox libma
 ```
