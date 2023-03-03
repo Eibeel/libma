@@ -1,6 +1,6 @@
 {
 	"name": "libma",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Administra librerías de componentes populares para React de forma fácil y eficiente.",
 	"type": "module",
 	"bin": {
