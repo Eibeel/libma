@@ -1,7 +1,11 @@
-## 📦 Packages:
+# libma
 
-- 🛠 [Clack](https://github.com/natemoo-re/clack): ready-to-use CLI prompt components.
-- 🖍 [Picocolors](https://github.com/alexeyraspopov/picocolors): The library for formatting terminal output with ANSI colors.
+`libma`: install and remove component libraries for React easily and efficiently, among the popular ones:
+- [Chakra UI](https://chakra-ui.com/)
+- [Material UI](https://mui.com/)
+- [Prime React](https://primereact.org/)
+- [Headdles UI](https://headlessui.com/)
+- [Mantine](https://mantine.dev/)
 
 ## How to use:
 
@@ -22,5 +26,10 @@ yarn add libma
 ```bash
 npx libma
 ```
-## LICENSE:
+## Packages:
+
+- 🛠 [Clack](https://github.com/natemoo-re/clack) by [@natemoo-re](https://github.com/natemoo-re)
+- 🖍 [Picocolors](https://github.com/alexeyraspopov/picocolors) by [@alexeyraspopov](https://github.com/alexeyraspopov)
+
+## License:
 - [MIT](https://github.com/Eibeel/libma/blob/master/LICENSE)
