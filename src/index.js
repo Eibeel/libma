@@ -41,7 +41,7 @@ const typeLibrary = await select({
   message: colors.yellow(`Seleccione la libreria que desea ${actionMessage}:`),
   options: Object.entries(LIBRARIES).map(([key, value]) => ({
     value: key,
-    label: `${key.padEnd(12, ' ')}: ${value.description}`
+    label: `${key.padEnd(14, ' ')}: ${value.description}`
   }))
 })
 
@@ -50,7 +50,7 @@ if (isCancel(typeLibrary)) exitProgram()
 const modifierMessage = actionPackage === 'add' ? 'instalará' : 'removerá'
 const shouldContinue = await confirm({
   message: colors.yellow(`Se ${modifierMessage} la siguiente libreria: ${colors.cyan(colors.underline(typeLibrary))}, ¿Desea continuar?`),
-  initialValue: true
+  initialValue: false
 })
 
 if (!shouldContinue) {
@@ -86,7 +86,7 @@ switch ((typePackageManager === 'npm' || typePackageManager === 'yarn' || typePa
     break
 }
 
-const installationResult = actionPackage === 'add' ? 'añadido' : 'removido'
-loading.stop(`Se ha ${installationResult} la libreria ${typeLibrary} via ${typePackageManager}`)
+const installationResult = actionPackage === 'add' ? 'añadida' : 'removida'
+loading.stop(colors.yellow(`Libreria ${colors.cyan(typeLibrary)} ${installationResult}`))
 
 outro('Todo ha salido correctamente.')
