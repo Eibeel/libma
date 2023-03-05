@@ -4,7 +4,7 @@ import { promisify } from 'node:util'
 const execAsync = promisify(exec)
 
 export async function addPackageWithNpm ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`npm install ${library}}`)
+  const { stdout } = await execAsync(`npm install ${library}`)
   return stdout
 }
 
