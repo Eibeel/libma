@@ -6,6 +6,12 @@
 - [Prime React](https://primereact.org/)
 - [Headdles UI](https://headlessui.com/)
 - [Mantine](https://mantine.dev/)
+- [Tailwind](https://tailwindcss.com/)
+- [Ant Design](https://ant.design/)
+- [NextUI](https://nextui.org/)
+- [Evergreen](https://evergreen.segment.com/)
+- [Semantic UI](https://semantic-ui.com/)
+- [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/)
 
 ## How to use:
 
