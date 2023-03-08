@@ -4,11 +4,11 @@
 
 ### Added
 
-- Link to library documentation
+- 5087bf2: Link to library documentation
 
 ### Fixed
 
-- Command bug to detect libraries and uninstall them
+- 66050c5: Command bug to detect libraries and uninstall them
 
 ### Changed
 
