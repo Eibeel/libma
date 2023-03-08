@@ -1,5 +1,20 @@
 # @libma
 
+## [1.2.3]
+
+### Added
+
+- Link to library documentation
+
+### Fixed
+
+- Command bug to detect libraries and uninstall them
+
+### Changed
+
+- Updated dependencies
+   - @clack/prompts@0.6.3
+
 ## [1.2.2]
 
 ### Added
