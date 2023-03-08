@@ -1,4 +1,4 @@
-import { confirm, intro, isCancel, outro, select, spinner } from '@clack/prompts'
+import { log, confirm, intro, isCancel, outro, select, spinner } from '@clack/prompts'
 import colors from 'picocolors'
 import { ACTION_PACKAGE } from './actionPackage.js'
 import {
@@ -54,7 +54,7 @@ const shouldContinue = await confirm({
 })
 
 if (!shouldContinue) {
-  outro(colors.yellow('Instalación cancelada.'))
+  outro(colors.red('Instalación cancelada.'))
   process.exit(0)
 }
 
@@ -62,31 +62,41 @@ const actionInstaller = actionPackage === 'add' ? 'Instalando' : 'Removiendo'
 const loading = spinner()
 loading.start(`${actionInstaller} via ${colors.yellow(typePackageManager)}`)
 
-const { installer } = LIBRARIES[typeLibrary]
-switch ((typePackageManager === 'npm' || typePackageManager === 'yarn' || typePackageManager === 'pnpm') && (actionPackage === 'add' || actionPackage === 'remove')) {
-  case typePackageManager === 'npm' && actionPackage === 'add':
-    await addPackageWithNpm({ library: installer })
-    break
-  case typePackageManager === 'npm' && actionPackage === 'remove':
-    await deletePackageWithNpm({ library: installer })
-    break
-  case typePackageManager === 'yarn' && actionPackage === 'add':
-    await addPackageWithYarn({ library: installer })
-    break
-  case typePackageManager === 'yarn' && actionPackage === 'remove':
-    await deletePackageWithYarn({ library: installer })
-    break
-  case typePackageManager === 'pnpm' && actionPackage === 'add':
-    await addPackageWithPnpm({ library: installer })
-    break
-  case typePackageManager === 'pnpm' && actionPackage === 'remove':
-    await deletePackageWithPnpm({ library: installer })
-    break
-  default:
-    break
+try {
+  const { installer } = LIBRARIES[typeLibrary]
+  switch ((typePackageManager === 'npm' || typePackageManager === 'yarn' || typePackageManager === 'pnpm') && (actionPackage === 'add' || actionPackage === 'remove')) {
+    case typePackageManager === 'npm' && actionPackage === 'add':
+      await addPackageWithNpm({ library: installer })
+      break
+    case typePackageManager === 'npm' && actionPackage === 'remove':
+      await deletePackageWithNpm({ library: installer })
+      break
+    case typePackageManager === 'yarn' && actionPackage === 'add':
+      await addPackageWithYarn({ library: installer })
+      break
+    case typePackageManager === 'yarn' && actionPackage === 'remove':
+      await deletePackageWithYarn({ library: installer })
+      break
+    case typePackageManager === 'pnpm' && actionPackage === 'add':
+      await addPackageWithPnpm({ library: installer })
+      break
+    case typePackageManager === 'pnpm' && actionPackage === 'remove':
+      await deletePackageWithPnpm({ library: installer })
+      break
+    default:
+      break
+  }
+} catch {
+  log.error(colors.red('Esta dependencia no ha sido instalada.'))
+  exitProgram()
 }
 
-const installationResult = actionPackage === 'add' ? 'añadida' : 'removida'
-loading.stop(colors.yellow(`Libreria ${colors.cyan(typeLibrary)} ${installationResult}`))
+const installationResult = actionPackage === 'add' ? 'añadido' : 'removido'
+loading.stop(colors.yellow(`${colors.cyan(typeLibrary)} ha sido ${installationResult}`))
 
-outro('Todo ha salido correctamente.')
+const { docs } = LIBRARIES[typeLibrary]
+if (actionPackage === 'add') {
+  log.info(colors.yellow(`✨ Docs: ${colors.cyan(docs)}`))
+}
+
+outro(colors.green('Todo ha salido correctamente.'))
