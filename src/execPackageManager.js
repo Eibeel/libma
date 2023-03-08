@@ -4,29 +4,25 @@ import { promisify } from 'node:util'
 const execAsync = promisify(exec)
 
 export async function addPackageWithNpm ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`npm install ${library}`)
-  return stdout
+  await execAsync(`npm install ${library}`)
 }
 
 export async function deletePackageWithNpm ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`npm remove ${library}`)
-  return stdout
+  await execAsync(`npm remove ${library}`)
 }
 
 export async function addPackageWithYarn ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`yarn add ${library}`)
-  return stdout
+  await execAsync(`yarn add ${library}`)
 }
 
 export async function deletePackageWithYarn ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`yarn remove ${library}`)
-  return stdout
+  await execAsync(`yarn remove ${library}`)
 }
+
 export async function addPackageWithPnpm ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`pnpm install ${library}`)
-  return stdout
+  await execAsync(`pnpm install ${library}`)
 }
+
 export async function deletePackageWithPnpm ({ library = '' } = {}) {
-  const { stdout } = await execAsync(`pnpm remove ${library}`)
-  return stdout
+  await execAsync(`pnpm remove ${library}`)
 }
