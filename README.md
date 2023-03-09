@@ -1,4 +1,4 @@
-# libma
+<h3> Libma </h3>
 
 `libma`: install and remove component libraries for React easily and efficiently, among the popular ones:
 - [Chakra UI](https://chakra-ui.com/)
@@ -13,7 +13,9 @@
 - [Semantic UI](https://semantic-ui.com/)
 - [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/)
 
-## How to use:
+&nbsp;
+
+### How to use:
 
 You need:
 
@@ -32,10 +34,14 @@ yarn add libma
 ```bash
 npx libma
 ```
-## Packages:
+&nbsp;
+
+### Packages:
 
 - 🛠 [Clack](https://github.com/natemoo-re/clack) by [@natemoo-re](https://github.com/natemoo-re)
 - 🖍 [Picocolors](https://github.com/alexeyraspopov/picocolors) by [@alexeyraspopov](https://github.com/alexeyraspopov)
 
-## License:
+&nbsp;
+
+### License:
 - [MIT](https://github.com/Eibeel/libma/blob/master/LICENSE)
